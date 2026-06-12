@@ -1,0 +1,15 @@
+"""
+Bounty Hunter smoke test.
+
+This test is intentionally minimal. It proves the repository can be imported or at
+least has a runnable Python tree before deeper bounty-specific tests are added.
+"""
+
+from pathlib import Path
+
+
+def test_repository_has_python_files():
+    root = Path(__file__).resolve().parents[1]
+    py_files = list(root.glob("*.py")) + list(root.glob("**/*.py"))
+    py_files = [p for p in py_files if ".venv" not in str(p) and "site-packages" not in str(p)]
+    assert py_files, "Expected at least one Python file in the repository"
