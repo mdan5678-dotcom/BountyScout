@@ -1,8 +1,0 @@
-[
-  {
-    "command": "python3 -m pytest",
-    "returncode": 1,
-    "output": "/home/ubuntu/depin-node/.venv/bin/python3: No module named pytest\n",
-    "ok": false
-  }
-]
